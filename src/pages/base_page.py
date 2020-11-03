@@ -1,5 +1,4 @@
 import src.framework.global_config as config
-import selenium
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
@@ -18,8 +17,6 @@ class BasePage:
 
     APP_URL = "https://www.grootan.com/"
     #APP_URL = "https://www.qwil.com/"
-    #APP_URL = "https://www.google.com/"
-
 
     def wait_for_page_load(self):
         state = config.DRIVER.execute_script("return document.readyState;")
@@ -207,6 +204,7 @@ class BasePage:
         config.DRIVER.get(uri)
         self.wait_for_page_load()
         self.maximize_window()
+        #config.DRIVER.set_window_size(1024, 768)
 
     def get_current_url(self):
         print(config.DRIVER.current_url)
@@ -335,3 +333,6 @@ class BasePage:
         element = self.find_presence_of_element(selector, timeout)
         config.DRIVER.execute_script("arguments[0].scrollIntoView();", element)
         self.click(selector)
+
+
+

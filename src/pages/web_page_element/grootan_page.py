@@ -12,8 +12,6 @@ class GrootanPage(BasePage):
     careers_button = (By.CSS_SELECTOR,".st-nav-menu li:nth-child(2) a:nth-child(6)")
     contact_us_button = (By.CSS_SELECTOR,".st-nav-menu li:nth-child(2) a:nth-child(7)")
 
-    search =(By.CSS_SELECTOR,'input[title="Search"]')
-
     def team_member_role(self,x,y):
         team_member_role = (By.CSS_SELECTOR,f"#root .section.section.team.design-two .col-xl-10 div:nth-child({str(x)}) > div:nth-child({str(y)}) .member-role")
         return team_member_role
@@ -22,9 +20,14 @@ class GrootanPage(BasePage):
         team_member_name = (By.CSS_SELECTOR,f"#root .section.section.team.design-two .col-xl-10 div:nth-child({str(x)}) > div:nth-child({str(y)}) .member-name")
         return team_member_name
 
-    def more_to_come(self,x,y):
-        more_to_come = (By.CSS_SELECTOR,f"#root .section.section.team.design-two .col-xl-10 div:nth-child({str(x)}) > div:nth-child({str(y)}) a")
-        return more_to_come
+    co_founder_image = (By.CSS_SELECTOR,".team .col-xl-10 div:nth-child(1) > div:nth-child(1) > img")
+    hr_manager_image = (By.CSS_SELECTOR,".team .col-xl-10 div:nth-child(1) > div:nth-child(2) > img")
+    cookie_decline = (By.CSS_SELECTOR,"#root .col-lg-5 button")
+    full_page_element = (By.CSS_SELECTOR,' body[data-aos-easing="ease"] #root')
+    blog_full_page_element = (By.CSS_SELECTOR," body #___gatsby")
+    close_grootan_chat = (By.CSS_SELECTOR,"#root .drift-widget-controller-icon.circle")
+    chat_active = (By.CSS_SELECTOR,"#root .drift-widget-controller--closed")
+    iframe_grootan_chat = (By.XPATH,"/html/body/div[3]/iframe")
 
 
 
